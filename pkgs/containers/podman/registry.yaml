@@ -1,0 +1,334 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/registry.json
+packages:
+  - type: github_release
+    repo_owner: containers
+    repo_name: podman
+    description: A tool for managing OCI containers and pods
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 1.9.1")
+        no_asset: true
+      - version_constraint: Version  in ["v1.4.2", "v1.5.0", "v1.5.1"]
+        error_message: No checksum available on Github
+      - version_constraint: Version == "v1.8.1"
+        checksum:
+          type: github_release
+          asset: sha256sum
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            asset: podman-remote-{{.OS}}.{{.Format}}
+            format: zip
+            files:
+              - name: podman
+                src: podman-remote-windows
+        supported_envs:
+          - windows/amd64
+      - version_constraint: Version  in ["v1.8.1", "v1.8.2", "v1.9.1"]
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            asset: podman-remote-{{.OS}}.{{.Format}}
+            format: zip
+            files:
+              - name: podman
+                src: podman-remote-windows
+        supported_envs:
+          - windows/amd64
+      - version_constraint: Version == "v1.9.2"
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            asset: podman-remote-darwin
+          - goos: linux
+            asset: podman-remote-static
+          - goos: windows
+            asset: podman-remote-{{.OS}}.{{.Format}}
+            format: zip
+            files:
+              - name: podman
+                src: podman-remote-windows
+        supported_envs:
+          - darwin/amd64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: semver("<= 1.9.3")
+        asset: podman-remote-{{.OS}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-remote-darwin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-remote-windows
+        supported_envs:
+          - darwin/amd64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: Version in ["v2.0.0-rc1", "v2.0.0-rc2", "v2.0.0-rc3", "v2.0.0-rc4", "v2.0.0-rc5", "v2.0.0-rc6", "v2.0.0-rc7", "v2.0.4", "v2.0.6-rc1", "v2.1.0-rc1", "v2.1.0-rc2", "v2.2.0-rc1", "v2.2.0-rc2"]
+        no_asset: true
+      - version_constraint: semver("<= 2.2.1")
+        asset: podman-remote-release-{{.OS}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static
+        supported_envs:
+          - darwin/amd64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: Version in ["v3.0.0-rc1", "v3.0.0-rc2", "v3.0.0-rc3", "v3.1.0", "v3.1.0-rc2", "v3.1.0-rc1", "3.0.2"]
+        no_asset: true
+      - version_constraint: Version in ["v3.1.2", "v3.1.1"] or semver("<= 3.0.1")
+        asset: podman-remote-release-{{.OS}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static
+          - goos: windows
+            files:
+              - name: podman
+                src: podman
+        supported_envs:
+          - darwin/amd64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: semver("<= 3.4.4")
+        asset: podman-remote-release-{{.OS}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/podman
+        supported_envs:
+          - darwin/amd64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: Version in ["v3.4.7", "v3.4.6", "v3.4.5", "v3.4.0-rc2", "v3.4.0-rc1", "v3.3.0-rc3", "v3.3.0-rc2", "v3.2.0-rc3", "v3.2.0-rc2", "v3.2.0-rc1"]
+        no_asset: true
+      - version_constraint: Version in ["v4.0.0", "v4.0.0-rc1", "v4.0.0-rc2", "v4.0.0-rc3", "v4.0.0-rc4", "v4.0.0-rc5", "v4.0.1", "v4.1.0-rc2", "v4.2.0-rc3", "v4.2.0-rc2", "v4.2.0-rc1"]
+        no_asset: true
+      - version_constraint: Version == "v4.3.0"
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+      - version_constraint: Version in ["v4.3.0-rc1"]
+        no_asset: true
+      - version_constraint: semver("<= 4.3.1")
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+          - windows/amd64
+      - version_constraint: Version in ["v4.4.0-rc3", "v4.4.0-rc2", "v4.4.0-rc1"]
+        no_asset: true
+      - version_constraint: Version in ["v4.4.0", "v4.4.2", "v4.4.3"]
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static-{{.OS}}_{{.Arch}}.{{.Format}}
+            files:
+              - name: podman
+                src: podman-remote-static-{{.OS}}_{{.Arch}}
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+          - linux/arm64
+          - windows/amd64
+      - version_constraint: Version in ["v4.5.0-rc1", "v4.5.0-rc2"]
+        no_asset: true
+      - version_constraint: Version == "v4.8.0"
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}-rc1/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static-{{.OS}}_{{.Arch}}.{{.Format}}
+            files:
+              - name: podman
+                src: bin/podman-remote-static-{{.OS}}_{{.Arch}}
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}-rc1/usr/bin/podman
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+          - linux/arm64
+          - windows/amd64
+      - version_constraint: Version in ["v5.2.0-rc3", "v5.3.0-rc1","v5.3.0-rc2" ]
+        error_message: No checksum available on Github
+      - version_constraint: semver("<= 5.4.2") || Version in ["v5.5.0-rc1", "v5.5.0-rc2"]
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static-{{.OS}}_{{.Arch}}.{{.Format}}
+            files:
+              - name: podman
+                src: bin/podman-remote-static-{{.OS}}_{{.Arch}}
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+          - linux/arm64
+          - windows/amd64
+      - version_constraint: "true"
+        asset: podman-remote-release-{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        checksum:
+          type: github_release
+          asset: shasums
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+          - goos: linux
+            format: tar.gz
+            asset: podman-remote-static-{{.OS}}_{{.Arch}}.{{.Format}}
+            files:
+              - name: podman
+                src: bin/podman-remote-static-{{.OS}}_{{.Arch}}
+          - goos: windows
+            files:
+              - name: podman
+                src: podman-{{trimV .Version}}/usr/bin/podman
+        supported_envs:
+          - darwin/amd64
+          - darwin/arm64
+          - linux/amd64
+          - linux/arm64
+          - windows/amd64
+          - windows/arm64

@@ -1,0 +1,207 @@
+packages:
+  # Versions 5.x
+  - name: containers/podman@v5.8.2
+  - name: containers/podman
+    version: v5.8.1
+  - name: containers/podman
+    version: v5.8.0
+  - name: containers/podman
+    version: v5.8.0-rc1
+  - name: containers/podman
+    version: v5.7.1
+  - name: containers/podman
+    version: v5.7.0
+  - name: containers/podman
+    version: v5.7.0-rc3
+  - name: containers/podman
+    version: v5.7.0-rc2
+  - name: containers/podman
+    version: v5.6.2
+  - name: containers/podman
+    version: v5.6.1
+  - name: containers/podman
+    version: v5.6.0
+  - name: containers/podman
+    version: v5.6.0-rc2
+  - name: containers/podman
+    version: v5.6.0-rc1
+  - name: containers/podman
+    version: v5.5.2
+  - name: containers/podman
+    version: v5.5.1
+  - name: containers/podman
+    version: v5.5.0
+  - name: containers/podman
+    version: v5.5.0-rc2
+  - name: containers/podman
+    version: v5.5.0-rc1
+  - name: containers/podman
+    version: v5.4.2
+  - name: containers/podman
+    version: v5.4.1
+  - name: containers/podman
+    version: v5.4.0
+  - name: containers/podman
+    version: v5.4.0-rc3
+  - name: containers/podman
+    version: v5.4.0-rc2
+  - name: containers/podman
+    version: v5.4.0-rc1
+  - name: containers/podman
+    version: v5.3.2
+  - name: containers/podman
+    version: v5.3.1
+  - name: containers/podman
+    version: v5.3.0
+  - name: containers/podman
+    version: v5.3.0-rc3
+  - name: containers/podman
+    version: v5.2.5
+  - name: containers/podman
+    version: v5.2.4
+  - name: containers/podman
+    version: v5.2.3
+  - name: containers/podman
+    version: v5.2.2
+  - name: containers/podman
+    version: v5.2.1
+  - name: containers/podman
+    version: v5.2.0
+  - name: containers/podman
+    version: v5.2.0-rc2
+  - name: containers/podman
+    version: v5.2.0-rc1
+  - name: containers/podman
+    version: v5.1.2
+  - name: containers/podman
+    version: v5.1.1
+  - name: containers/podman
+    version: v5.1.0-rc1
+
+  # Versions 4.x
+  - name: containers/podman@v4.9.5
+  - name: containers/podman
+    version: v4.9.4
+  - name: containers/podman
+    version: v4.9.3
+  - name: containers/podman
+    version: v4.9.2
+  - name: containers/podman
+    version: v4.9.1
+  - name: containers/podman
+    version: v4.9.0
+  - name: containers/podman
+    version: v4.8.3
+  - name: containers/podman
+    version: v4.8.2
+  - name: containers/podman
+    version: v4.8.1
+  - name: containers/podman
+    version: v4.8.0
+  - name: containers/podman
+    version: v4.8.0-rc1
+  - name: containers/podman
+    version: v4.7.2
+  - name: containers/podman
+    version: v4.7.1
+  - name: containers/podman
+    version: v4.7.0
+  - name: containers/podman
+    version: v4.7.0-rc1
+  - name: containers/podman
+    version: v4.6.2
+  - name: containers/podman
+    version: v4.6.1
+  - name: containers/podman
+    version: v4.6.0
+  - name: containers/podman
+    version: v4.6.0-rc2
+  - name: containers/podman
+    version: v4.6.0-rc1
+  - name: containers/podman
+    version: v4.5.1
+  - name: containers/podman
+    version: v4.5.0
+  - name: containers/podman
+    version: v4.4.4
+  - name: containers/podman
+    version: v4.4.3
+  - name: containers/podman
+    version: v4.4.2
+  - name: containers/podman
+    version: v4.4.1
+  - name: containers/podman
+    version: v4.4.0
+  - name: containers/podman
+    version: v4.3.1
+  - name: containers/podman
+    version: v4.3.0
+  - name: containers/podman
+    version: v4.2.1
+  - name: containers/podman
+    version: v4.2.0
+  - name: containers/podman
+    version: v4.1.1
+  - name: containers/podman
+    version: v4.1.0
+  - name: containers/podman
+    version: v4.0.3
+  - name: containers/podman
+    version: v4.0.2
+
+  # Versions 3.x
+  - name: containers/podman@v3.4.4
+  - name: containers/podman
+    version: v3.4.3
+  - name: containers/podman
+    version: v3.4.2
+  - name: containers/podman
+    version: v3.4.1
+  - name: containers/podman
+    version: v3.4.0
+  - name: containers/podman
+    version: v3.3.1
+  - name: containers/podman
+    version: v3.3.0
+  - name: containers/podman
+    version: v3.2.3
+  - name: containers/podman
+    version: v3.2.2
+  - name: containers/podman
+    version: v3.2.1
+  - name: containers/podman
+    version: v3.2.0
+  - name: containers/podman
+    version: v3.1.2
+  - name: containers/podman
+    version: v3.1.1
+  - name: containers/podman
+    version: v3.0.1
+  - name: containers/podman
+    version: v3.0.0
+
+  # Versions 2.x
+  - name: containers/podman@v2.2.1
+  - name: containers/podman
+    version: v2.2.0
+  - name: containers/podman
+    version: v2.1.1
+  - name: containers/podman
+    version: v2.1.0
+  - name: containers/podman
+    version: v2.0.6
+  - name: containers/podman
+    version: v2.0.5
+  - name: containers/podman
+    version: v2.0.3
+  - name: containers/podman
+    version: v2.0.2
+  - name: containers/podman
+    version: v2.0.1
+  - name: containers/podman
+    version: v2.0.0
+
+  # Versions 1.x
+  - name: containers/podman@v1.9.3
+  - name: containers/podman
+    version: v1.9.2
